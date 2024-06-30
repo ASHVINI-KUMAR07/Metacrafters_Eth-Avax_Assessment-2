@@ -127,43 +127,38 @@ contract Assessment {
 
 ## explanation
 
-
+1.
 function getAddress() external view returns (address) {
     return address(this);
 }
-
 This function is external, meaning it can be called from outside the contract.
 It is view, indicating that it does not modify the state of the contract.
 
-
+2.
 function viewOwner() public view returns (address) {
     return owner;
 }
-
 This function is public, so it can be called from anywhere.
 It is view, meaning it only reads data from the contract and doesn't modify state.
 
-
+3.
 function increaseBalance(uint256 _amount) public {
     balance += _amount;
 }
-
 This function is public, so it can be called externally.
 It does not return a value (void in other languages).
 
-
+4.
 function showBalance() external view returns (uint) {
     return address(this).balance;
 }
-
 This function is external, meaning it can be called from outside the contract.
 It is view, indicating it does not modify the contract state.
 
-
+5. 
 function decrease(uint _amount) external {
     balance -= _amount;
 }
-
 This function is external, so it can be called from outside the contract.
 It modifies the contract state by reducing balance by _amount.
 
