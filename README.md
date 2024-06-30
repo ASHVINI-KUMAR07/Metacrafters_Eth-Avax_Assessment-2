@@ -120,7 +120,49 @@ contract Assessment {
         balance-=_amount;
     }
 }
-To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.9" (or another compatible version), and then click on the ("Compile "the name of the file" ") for ex. comple first.sol button. Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "Assessment.sol" contract from the dropdown menu, and then click on the "Deploy" button. then u can see a the below of the option ' Deployed/Unpinned Contracts ' expand it and balances mint burn etc and now u can see our code is ready to run .
+
+- To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. 
+-then make sure the "Compiler" option is set to "0.8.9" (or another compatible version),
+-Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar.
+
+## explanation
+getAddress():
+
+
+function getAddress() external view returns (address) {
+    return address(this);
+}
+This function is external, meaning it can be called from outside the contract.
+It is view, indicating that it does not modify the state of the contract.
+
+
+function viewOwner() public view returns (address) {
+    return owner;
+}
+This function is public, so it can be called from anywhere.
+It is view, meaning it only reads data from the contract and doesn't modify state.
+
+
+function increaseBalance(uint256 _amount) public {
+    balance += _amount;
+}
+This function is public, so it can be called externally.
+It does not return a value (void in other languages).
+
+
+function showBalance() external view returns (uint) {
+    return address(this).balance;
+}
+This function is external, meaning it can be called from outside the contract.
+It is view, indicating it does not modify the contract state.
+
+
+function decrease(uint _amount) external {
+    balance -= _amount;
+}
+This function is external, so it can be called from outside the contract.
+It modifies the contract state by reducing balance by _amount.
+
 
 ## Authors
 
